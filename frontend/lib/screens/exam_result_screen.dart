@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_text_styles.dart';
@@ -54,29 +55,13 @@ class ExamResultScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Top Trophy Graphic (matching Figma Frame 14:515)
-                Container(
-                  width: 140,
-                  height: 140,
-                  decoration: BoxDecoration(
-                    color: AppColors.brandGreen.withValues(alpha: 0.12),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(
-                    child: Container(
-                      width: 110,
-                      height: 110,
-                      decoration: const BoxDecoration(
-                        color: AppColors.cardDefault,
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Icon(
-                        Icons.emoji_events_rounded,
-                        size: 64,
-                        color: AppColors.trophyGold,
-                      ),
-                    ),
-                  ),
+                // Top Gift Box Graphic from Figma (Node #14:515)
+                SvgPicture.asset(
+                  'assets/images/gift_box.svg',
+                  width: 144,
+                  height: 151,
+                  fit: BoxFit.contain,
+                  semanticsLabel: 'Hộp quà kết quả bài thi',
                 ),
                 const SizedBox(height: 20),
 
